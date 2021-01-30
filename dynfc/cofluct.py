@@ -10,7 +10,7 @@ def z_corr(iseries, jseries):
     return sum(zi*zj)/(zi.size - 1)
 
 def cofluct(RSsig):
-    r"""Run LEiDA Routine for BOLD signal.
+    r"""Run cofluctuation analysis for BOLD signal.
 
     Parameters
     ----------
@@ -19,21 +19,26 @@ def cofluct(RSsig):
 
     Returns
     -------
-    Phases : ndarray
-        Phases array for all parcels/voxels in the format [N, Tmax, Subs].
-    syncConn : ndarray
-        Synchronicity matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
-    leidaArray : ndarray
-        Leading eigenvector of synchornicity matrix [Tmax, N, Subs].
+    cofl : ndarray
+        Cofluctuation matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
 
     References
     ----------
 
     .. [1] 
-    Lord et al,. (2019). Dynamical exploration of the 
-    repertoire of brain networks at rest is 
-    modulated by psilocybin. NeuroImage, 199(April), 127–142. 
-    https://doi.org/10.1016/j.neuroimage.2019.05.060
+    Esfahlani, F. Z. et al. (2019) ‘High-amplitude co-fluctuations in cortical activity drive 
+    functional connectivity’, bioRxiv. Cold Spring Harbor Laboratory, p. 800045. 
+    doi: 10.1101/800045.
+
+    .. [2]
+    Faskowitz, J. et al. (2020) ‘Edge-centric functional network representations of human 
+    cerebral cortex reveal overlapping system-level architecture’, Nature Neuroscience. 
+    Springer US, 23(12), pp. 1644–1654. doi: 10.1038/s41593-020-00719-y.
+
+    .. [3]
+    Esfahlani, F. Z. et al. (2020) ‘High-amplitude cofluctuations in cortical activity drive 
+    functional connectivity’, Proceedings of the National Academy of Sciences of the United 
+    States of America, 117(45), pp. 28393–28401. doi: 10.1073/pnas.2005531117.
 
     """
 
