@@ -7,6 +7,8 @@ from .doEuclid import doEuclid
 from .doHilbert import doHilbert
 from .dPL import dPL
 from .phDiff import phDiff
+from .cofluct import z_corr
+from .cofluct import cofluct
 
 __all__ = [
     'run_multiPat', 
@@ -16,4 +18,5 @@ __all__ = [
     'doHilbert', 
     'phDiff', 
     'butter_design', 
-    'doEuclid']
+    'doEuclid', 
+    'cofluct']
