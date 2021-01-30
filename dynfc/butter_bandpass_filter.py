@@ -1,5 +1,5 @@
 from scipy.signal import filtfilt
-
+from .butter_design import butter_design
 
 def butter_bandpass_filter(x, flp, fhi, delt, order):
     r"""Butterworth filter design.

@@ -1,4 +1,6 @@
 from numpy import zeros, arange
+from .get_LEiDA import get_LEiDA
+from .phDiff import phDiff
 
 
 def dPL(N, Tmax, Phases):
