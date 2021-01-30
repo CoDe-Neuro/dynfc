@@ -1,1 +1,1 @@
-# CN_dynFC
+# CoDe-Neuro's Dynamic Functional Connectivity Tools
