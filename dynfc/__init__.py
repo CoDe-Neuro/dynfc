@@ -19,4 +19,5 @@ __all__ = [
     'phDiff', 
     'butter_design', 
     'doEuclid', 
-    'cofluct']
+    'cofluct', 
+    'phDiff']
