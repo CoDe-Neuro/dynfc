@@ -1,5 +1,5 @@
 # CoDe-Neuro's Dynamic Functional Connectivity Tools
-
+[![codecov](https://codecov.io/gh/CoDe-Neuro/dynfc/branch/main/graph/badge.svg?token=EB7Z9AWZVN)](https://codecov.io/gh/CoDe-Neuro/dynfc)
 
 ## Funding
 
