@@ -2,6 +2,7 @@ from numpy import zeros
 from matplotlib.pyplot import figure, savefig, close
 from seaborn import heatmap
 from .butter_bandpass_filter import butter_bandpass_filter
+from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
 from .dPL import dPL
 
