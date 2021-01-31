@@ -10,6 +10,6 @@ COPY . .
 
 USER root
 
-WORKDIR ./tests
+RUN ["chmod", "u+x", "test.sh"]
 
-CMD ["bash"]
+CMD ["./test.sh"]
