@@ -5,12 +5,12 @@ RUN python --version
 RUN conda install --quiet --yes -c \
      conda-forge docker-py
 
-ADD requirements.txt /jupyter/
-
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 USER root
+
+ADD requirements.txt /root
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
