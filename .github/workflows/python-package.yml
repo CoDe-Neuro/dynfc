@@ -43,5 +43,3 @@ jobs:
         coverage run -m unittest
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1
-      env:
-          token: ${{ secrets.CODECOV_TOKEN }}
