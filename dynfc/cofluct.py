@@ -1,7 +1,5 @@
 from numpy import mean, std, sum, zeros, arange
 from .butter_bandpass_filter import butter_bandpass_filter
-from .doHilbert import doHilbert
-from .dPL import dPL
 
 def z_corr(iseries, jseries):
     zi = (iseries - mean(iseries))/std(iseries)
