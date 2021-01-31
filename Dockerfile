@@ -1,9 +1,15 @@
 FROM python:3.7
 
-WORKDIR .
+ADD requirements.txt /
 
 RUN pip install -r requirements.txt
 
-ADD test.sh /tests
+WORKDIR /pytest
 
-RUN test.sh
+COPY . .
+
+USER root
+
+WORKDIR ./tests
+
+CMD ["bash"]
