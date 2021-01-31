@@ -5,7 +5,6 @@ RUN python --version
 RUN conda install --quiet --yes -c \
      conda-forge docker-py
 
-WORKDIR /jupyter
 ADD requirements.txt /jupyter/
 
 RUN pip install --upgrade pip
@@ -23,8 +22,6 @@ RUN apt-get update && \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN export HDF5_USE_FILE_LOCKING=FALSE
+ADD test.sh /tests
 
-USER $NB_UID
-
-WORKDIR /root
+RUN test.sh
