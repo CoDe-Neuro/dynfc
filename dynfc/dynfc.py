@@ -1,10 +1,9 @@
 from numpy import zeros
-from matplotlib.pyplot import figure, savefig, close
-from seaborn import heatmap
 from .butter_bandpass_filter import butter_bandpass_filter
 from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
 from .dPL import dPL
+from .cofluct import cofluct
 
 
 
@@ -132,24 +131,67 @@ def run_multiPatKuramoto(RSsig):
 
     return Phases, sync, metastab
 
-def doFigures(syncConnAux):
 
-    for i in range(0, syncConnAux.shape[2]):
-        figure(figsize = (4, 3), dpi = 150)
-        corr = syncConnAux[:, :, i]
-        ax = heatmap(
-            corr,
-            vmin = 0, 
-            vmax = 1, 
-            center = 0.5,
-            cmap = "viridis",
-            cbar_kws = {"orientation": "vertical"}
-        )
+def run_multiPatcofluct(RSsig):
+    r"""Run cofluctuation analysis for BOLD signal.
 
-        ax.set_xticklabels(
-            ax.get_xticklabels(),
-            rotation = 45,
-            horizontalalignment = 'right'
-        )
-        savefig("out/output_"+str(i)+".png")
-        close()
+    Parameters
+    ----------
+    RSsig : ndarray
+        BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
+
+    Returns
+    -------
+    cofl : ndarray
+        Cofluctuation matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
+
+    References
+    ----------
+
+    .. [1] 
+    Esfahlani, F. Z. et al. (2020) ‘High-amplitude cofluctuations in cortical activity drive 
+    functional connectivity’, Proceedings of the National Academy of Sciences of the United 
+    States of America, 117(45), pp. 28393–28401. doi: 10.1073/pnas.2005531117.
+
+    .. [2]
+    Faskowitz, J. et al. (2020) ‘Edge-centric functional network representations of human 
+    cerebral cortex reveal overlapping system-level architecture’, Nature Neuroscience. 
+    Springer US, 23(12), pp. 1644–1654. doi: 10.1038/s41593-020-00719-y.
+    
+
+    """
+
+    Tmax = RSsig.shape[0]
+    N = RSsig.shape[1]
+    nSub = RSsig.shape[2]
+
+    T = arange(10, Tmax - 10)
+
+    cofl = zeros([N, N, Tmax - 20, nSub])
+
+    flp = .04              # lowpass frequency of filter
+    fhi = .07              # highpass
+    delt = 2               # sampling interval
+    k = 2                  # 2nd order butterworth filter
+
+    for pat in range(nSub):
+
+        timeserie = zeros([N, Tmax])
+        signal = RSsig[:, :, pat].transpose()
+
+        for seed in range(N):
+            timeserie[seed, :] = butter_bandpass_filter(signal[seed, :],
+                                                        flp, fhi, delt, k)
+        print('Signal filtered.')
+
+        for j in range(0, N):
+
+            for k in range(0, j + 1):
+
+                cofl[j, k, pat] = cofluct(timeserie[j, T], timeserie[k, T])
+                cofl[k, j, pat] = cofl[j, k, pat]
+
+        print('Matrices obtained.')
+        print('Routine finished for patient no. ' + str(pat + 1) + '.')
+
+    return cofl
