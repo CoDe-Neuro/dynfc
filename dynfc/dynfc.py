@@ -28,10 +28,18 @@ def run_multiPat(RSsig):
     ----------
 
     .. [1] 
+    Cabral, J. et al. (2017) ‘Cognitive performance in healthy 
+    older adults relates to spontaneous switching between states 
+    of functional connectivity during rest’, Scientific Reports. 
+    Nature Publishing Group, 7(1), p. 5135. 
+    doi: 10.1038/s41598-017-05425-7.
+
+    .. [2] 
     Lord et al,. (2019). Dynamical exploration of the 
     repertoire of brain networks at rest is 
     modulated by psilocybin. NeuroImage, 199(April), 127–142. 
     https://doi.org/10.1016/j.neuroimage.2019.05.060
+
 
     """
 
@@ -167,28 +175,18 @@ def run_multiPatcofluct(RSsig):
 
     T = arange(10, Tmax - 10)
 
-    cofl = zeros([N, N, Tmax - 20, nSub])
-
-    flp = .04              # lowpass frequency of filter
-    fhi = .07              # highpass
-    delt = 2               # sampling interval
-    k = 2                  # 2nd order butterworth filter
+    cofl = zeros([N, N, nSub])
 
     for pat in range(nSub):
 
         timeserie = zeros([N, Tmax])
         signal = RSsig[:, :, pat].transpose()
 
-        for seed in range(N):
-            timeserie[seed, :] = butter_bandpass_filter(signal[seed, :],
-                                                        flp, fhi, delt, k)
-        print('Signal filtered.')
-
         for j in range(0, N):
 
             for k in range(0, j + 1):
 
-                cofl[j, k, pat] = cofluct(timeserie[j, T], timeserie[k, T])
+                cofl[j, k, pat] = cofluct(signal[j, T], signal[k, T])
                 cofl[k, j, pat] = cofl[j, k, pat]
 
         print('Matrices obtained.')
