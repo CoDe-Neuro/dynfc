@@ -1,4 +1,7 @@
 # CoDe-Neuro's Dynamic Functional Connectivity Tools
+[![codecov](https://codecov.io/gh/CoDe-Neuro/dynfc/branch/main/graph/badge.svg?token=EB7Z9AWZVN)](https://codecov.io/gh/CoDe-Neuro/dynfc) 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/CoDe-Neuro/dynfc/Python%20package)
+![GitHub](https://img.shields.io/github/license/CoDe-Neuro/dynfc)
 
 
 ## Funding
