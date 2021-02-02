@@ -1,4 +1,4 @@
-from numpy import zeros
+from numpy import zeros, arange
 from .butter_bandpass_filter import butter_bandpass_filter
 from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
