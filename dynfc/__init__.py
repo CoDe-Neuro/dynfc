@@ -9,6 +9,7 @@ from .doHilbert import doHilbert
 from .dPL import dPL
 from .phDiff import phDiff
 from .cofluct import cofluct
+from .cc import corr_slide
 
 __all__ = [
     'run_multiPat', 
