@@ -1,8 +1,5 @@
 import dynfc as dyn
-from numpy import pi, zeros
-from numpy.random import rand, seed
-import scipy as sc
-from scipy.io import loadmat
+from numpy import pi, load
 
 def test_phDiff1():
     assert round(dyn.phDiff(pi, pi),1) == 1
@@ -15,9 +12,8 @@ def test_phDiff3():
 
 def test_cofluct():
 
-    ts = loadmat('data/ts.mat')['ts']
-    ts = ts.transpose()
+    ts = load('data/ts.npy')
     cofl = dyn.cofluct(ts)
-    fc = loadmat('data/fc.mat')['fc']
+    fc = load('data/fc.npy')
 
     assert round(sum(sum(fc - cofl))) == 0
