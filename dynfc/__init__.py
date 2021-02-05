@@ -1,5 +1,6 @@
 from .dynfc import run_multiPat
 from .dynfc import run_multiPatKuramoto
+from .dynfc import run_multiPatcofluct
 from .doKuramoto import doKuramoto
 from .get_LEiDA import get_LEiDA
 from .butter_bandpass_filter import butter_bandpass_filter
@@ -13,6 +14,7 @@ from .cc import corr_slide
 
 __all__ = [
     'run_multiPat', 
+    'run_multiPatcofluct',
     'doKuramoto', 
     'get_LEiDA', 
     'dPL', 
