@@ -10,9 +10,11 @@ from .dPL import dPL
 from .phDiff import phDiff
 from .cofluct import cofluct
 from .cc import corr_slide
+from .dynfc import cofluct
 
 __all__ = [
     'run_multiPat', 
+    'cofluct',
     'doKuramoto', 
     'get_LEiDA', 
     'dPL', 
