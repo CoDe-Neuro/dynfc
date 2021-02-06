@@ -1,5 +1,5 @@
 import dynfc as dyn
-from numpy import pi, load
+from numpy import pi, load, hstack
 
 def test_phDiff1():
     assert round(dyn.phDiff(pi, pi),1) == 1
@@ -17,3 +17,24 @@ def test_cofluct():
     fc = load('data/fc.npy')
 
     assert round(sum(sum(fc - cofl))) == 0
+
+
+def test_corr_slide():
+
+    ts = load('data/ts.npy')
+    corr_mats = dyn.corr_slide(ts, ts.shape[1])
+    fc = load('data/fc.npy')
+
+    assert round(sum(sum(fc - corr_mats[:,:,0]))) == 0
+
+
+def test_corr_slide2():
+
+    ts = load('data/ts.npy')
+    ts2 = hstack((ts, ts))
+    corr_mats = dyn.corr_slide(ts2, ts.shape[1])
+    fc = load('data/fc.npy')
+
+    assert round(
+        sum(sum(fc - corr_mats[:, :, 0])) + 
+        sum(sum(fc - corr_mats[:, :, 1]))) == 0

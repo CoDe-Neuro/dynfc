@@ -27,7 +27,7 @@ def corr_slide(series, size):
     windowCount = dim[1]//size
     corr_mats = zeros((dim[0],dim[0],windowCount))
 
-    for w in range(4):      
+    for w in range(windowCount):
         corr_mats[:,:,w] = corrcoef(series[:, 0 + w*size : size + w*size])
         
     
