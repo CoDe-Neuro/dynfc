@@ -38,3 +38,13 @@ def test_corr_slide2():
     assert round(
         sum(sum(fc - corr_mats[:, :, 0])) + 
         sum(sum(fc - corr_mats[:, :, 1]))) == 0
+
+
+def test_get_edgests():
+    size = 12
+    ts = load('data/ts.npy')
+    edges_series, rss = dyn.get_edgests(ts, size)
+
+    num = int(ts.shape[0])
+
+    assert rss.shape[0] == num
