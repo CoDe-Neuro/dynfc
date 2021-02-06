@@ -1,4 +1,5 @@
-from numpy import zeros, corrcoef
+import dynfc as dyn
+from numpy import zeros, corrcoef, triu_indices, sqrt, sum, square
 
 
 def cofluct(RSsig):
@@ -38,3 +39,19 @@ def cofluct(RSsig):
     print('Matrices obtained.')
 
     return cofl
+
+def get_edgests(RSsig, size):
+    corr_mats = dyn.corr_slide(RSsig, size)
+    edges_series = zeros((corr_mats.shape[0]*(corr_mats.shape[0] - 1)//2 + 
+    corr_mats.shape[0], corr_mats.shape[2]))
+
+    for i in range(corr_mats.shape[2]):
+        mat = corr_mats[:, :, i]
+        upt = triu_indices(mat.shape[0])
+        vec_mat = mat[upt]
+
+        edges_series[:, i] = vec_mat
+    
+    rss = sqrt(sum(square(corr_mats), axis = 0))
+
+    return edges_series, rss
