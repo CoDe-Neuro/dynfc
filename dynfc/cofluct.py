@@ -53,6 +53,6 @@ def get_edgests(RSsig, size):
 
         edges_series[:, i] = vec_mat
     
-    rss = sqrt(np.sum(square(corr_mats), axis = 0))
+    rss = sqrt(np.sum(square(edges_series), axis=0))
 
     return edges_series, rss

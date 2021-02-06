@@ -45,6 +45,6 @@ def test_get_edgests():
     ts = load('data/ts.npy')
     edges_series, rss = dyn.get_edgests(ts, size)
 
-    num = int(ts.shape[0])
+    num = int(ts.shape[1]/size)
 
     assert rss.shape[0] == num
