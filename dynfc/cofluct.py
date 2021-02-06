@@ -1,5 +1,6 @@
 import dynfc as dyn
 from numpy import zeros, corrcoef, triu_indices, sqrt, sum, square
+import numpy as np
 
 
 def cofluct(RSsig):
@@ -52,6 +53,6 @@ def get_edgests(RSsig, size):
 
         edges_series[:, i] = vec_mat
     
-    rss = sqrt(sum(square(corr_mats), axis = 0))
+    rss = sqrt(np.sum(square(corr_mats), axis = 0))
 
     return edges_series, rss
