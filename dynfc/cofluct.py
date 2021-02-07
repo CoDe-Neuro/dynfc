@@ -41,14 +41,14 @@ def cofluct(RSsig):
 
     return cofl
 
-def get_edgests(RSsig, size):
+def get_edgests(RSsig, size, k = 0):
     corr_mats = dyn.corr_slide(RSsig, size)
-    edges_series = zeros((corr_mats.shape[0]*(corr_mats.shape[0] - 1)//2 + 
-    corr_mats.shape[0], corr_mats.shape[2]))
+    edges_series = zeros((len(triu_indices(corr_mats.shape[0], k)[0]),
+    corr_mats.shape[2]))
 
     for i in range(corr_mats.shape[2]):
         mat = corr_mats[:, :, i]
-        upt = triu_indices(mat.shape[0])
+        upt = triu_indices(mat.shape[0], k)
         vec_mat = mat[upt]
 
         edges_series[:, i] = vec_mat
