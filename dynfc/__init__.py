@@ -8,7 +8,7 @@ from .doHilbert import doHilbert
 from .dPL import dPL
 from .phDiff import phDiff
 from .cofluct import cofluct, get_edgests
-from .cc import corr_slide
+from .cc import corr_slide, cc
 
 __all__ = [
     'run_multiPat', 
@@ -23,4 +23,6 @@ __all__ = [
     'cofluct', 
     'phDiff', 
     'z_corr', 
-    'get_edgests']
+    'get_edgests', 
+    'corr_slide', 
+    'cc']

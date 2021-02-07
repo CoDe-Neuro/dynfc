@@ -1,4 +1,5 @@
 from numpy import zeros, corrcoef
+import dynfc as dyn
 
 def corr_slide(series, size):
     r"""Run cofluctuation analysis for BOLD signal.
@@ -32,3 +33,10 @@ def corr_slide(series, size):
         
     
     return corr_mats
+
+def cc(series, size, k = 1):
+
+    edges_series, rss = dyn.get_edgests(series, size, k)
+    corrcorr = corrcoef(edges_series, rowvar = False)
+
+    return corrcorr
