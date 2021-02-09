@@ -10,14 +10,6 @@ def test_phDiff2():
 def test_phDiff3():
     assert round(dyn.phDiff(pi, 0),1) == - 1
 
-def test_cofluct():
-
-    ts = load('data/ts.npy')
-    cofl = dyn.cofluct(ts)
-    fc = load('data/fc.npy')
-
-    assert round(sum(sum(fc - cofl))) == 0
-
 
 def test_corr_slide():
 
@@ -40,11 +32,29 @@ def test_corr_slide2():
         sum(sum(fc - corr_mats[:, :, 1]))) == 0
 
 
-def test_get_edgests():
+def test_cofluct():
     size = 12
     ts = load('data/ts.npy')
-    edges_series, rss = dyn.get_edgests(ts, size)
+    ets = load('data/ets.npy')
 
-    num = int(ts.shape[1]/size)
+    edges_series, corr_mats, rss = dyn.cofluct(ts, size)
 
-    assert rss.shape[0] == num
+    assert round(sum(sum(edges_series - ets))) == 0
+
+
+def test_cofluct2():
+    size = 600
+    ts = load('data/ts.npy')
+    fc = load('data/fc.npy')
+
+    edges_series, corr_mats, rss = dyn.cofluct(ts, size)
+
+    assert round(sum(sum(corr_mats[:,:,0] - fc))) == 0
+
+def test_cofluct3():
+    size = 12
+    ts = load('data/ts.npy')
+
+    edges_series, corr_mats, rss = dyn.cofluct(ts, size)
+
+    assert rss.shape[0] == ts.shape[1]
