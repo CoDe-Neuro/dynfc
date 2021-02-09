@@ -1,9 +1,10 @@
 import dynfc as dyn
-from numpy import zeros, corrcoef, triu_indices, sqrt, sum, square
+from numpy import zeros, triu_indices, sqrt, sum, square, multiply
+from scipy.stats import zscore
 import numpy as np
 
 
-def cofluct(RSsig):
+def cofluct(series, size, k=1):
     r"""Run cofluctuation analysis for BOLD signal.
 
     Parameters
@@ -31,28 +32,15 @@ def cofluct(RSsig):
     
 
     """
-
-    N = RSsig.shape[0]
-
-    cofl = zeros([N, N])
-    cofl = corrcoef(RSsig)
-
-    print('Matrices obtained.')
-
-    return cofl
-
-def get_edgests(RSsig, size, k = 0):
-    corr_mats = dyn.corr_slide(RSsig, size)
+    corr_mats = dyn.corr_slide(series, size)
     edges_series = zeros((len(triu_indices(corr_mats.shape[0], k)[0]),
     corr_mats.shape[2]))
 
-    for i in range(corr_mats.shape[2]):
-        mat = corr_mats[:, :, i]
-        upt = triu_indices(mat.shape[0], k)
-        vec_mat = mat[upt]
+    ts_z = zscore(series, axis=1, ddof=1)
+    upt = np.triu_indices(ts_z.shape[0], k)
 
-        edges_series[:, i] = vec_mat
-    
+    edges_series = multiply(ts_z[upt[0], ], ts_z[upt[1], ])
+
     rss = sqrt(np.sum(square(edges_series), axis=0))
 
-    return edges_series, rss
+    return edges_series, corr_mats, rss

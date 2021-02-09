@@ -7,7 +7,7 @@ from .doEuclid import doEuclid
 from .doHilbert import doHilbert
 from .dPL import dPL
 from .phDiff import phDiff
-from .cofluct import cofluct, get_edgests
+from .cofluct import cofluct
 from .cc import corr_slide, cc
 
 __all__ = [
