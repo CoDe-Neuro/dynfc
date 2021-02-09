@@ -43,7 +43,7 @@ def test_cofluct():
 
 
 def test_cofluct2():
-    size = 1200
+    size = 600
     ts = load('data/ts.npy')
     fc = load('data/fc.npy')
 
