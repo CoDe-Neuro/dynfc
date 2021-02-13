@@ -14,7 +14,7 @@ def test_phDiff3():
 def test_corr_slide():
 
     ts = load('data/ts.npy')
-    corr_mats = dyn.corr_slide(ts, ts.shape[1])
+    corr_mats, idx = dyn.corr_slide(ts, ts.shape[1])
     fc = load('data/fc.npy')
 
     assert round(sum(sum(fc - corr_mats[:,:,0]))) == 0
@@ -24,7 +24,7 @@ def test_corr_slide2():
 
     ts = load('data/ts.npy')
     ts2 = hstack((ts, ts))
-    corr_mats = dyn.corr_slide(ts2, ts.shape[1])
+    corr_mats, idx = dyn.corr_slide(ts2, ts.shape[1])
     fc = load('data/fc.npy')
 
     assert round(
