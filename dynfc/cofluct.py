@@ -32,7 +32,7 @@ def cofluct(series, size, k=1):
     
 
     """
-    corr_mats = dyn.corr_slide(series, size)
+    corr_mats, idx = dyn.corr_slide(series, size)
     edges_series = zeros((len(triu_indices(corr_mats.shape[0], k)[0]),
     corr_mats.shape[2]))
 

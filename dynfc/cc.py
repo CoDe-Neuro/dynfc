@@ -33,7 +33,7 @@ def corr_slide(series, size, slide = None):
     for w in range(idx.shape[0]):
         corr_mats[:, :, w] = corrcoef(series[:, 0 + idx[w]: size + idx[w]])
         
-    return corr_mats
+    return corr_mats, idx
 
 def cc(series, size, k = 1):
 
