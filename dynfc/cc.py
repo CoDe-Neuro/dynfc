@@ -1,7 +1,7 @@
-from numpy import zeros, corrcoef
+from numpy import zeros, corrcoef, arange
 import dynfc as dyn
 
-def corr_slide(series, size):
+def corr_slide(series, size, slide = None):
     r"""Run cofluctuation analysis for BOLD signal.
 
     Parameters
@@ -24,14 +24,15 @@ def corr_slide(series, size):
     
 
     """
-    dim = series.shape
-    windowCount = dim[1]//size
-    corr_mats = zeros((dim[0],dim[0],windowCount))
+    if slide == None:
+        slide = size
 
-    for w in range(windowCount):
-        corr_mats[:,:,w] = corrcoef(series[:, 0 + w*size : size + w*size])
+    idx = arange(0, series.shape[1], slide)
+    corr_mats = zeros((series.shape[0], series.shape[0], idx.shape[0]))
+
+    for w in range(idx.shape[0]):
+        corr_mats[:, :, w] = corrcoef(series[:, 0 + idx[w]: size + idx[w]])
         
-    
     return corr_mats
 
 def cc(series, size, k = 1):
