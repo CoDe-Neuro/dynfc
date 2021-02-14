@@ -1,4 +1,4 @@
-from numpy import zeros, arange
+from numpy import zeros
 from .butter_bandpass_filter import butter_bandpass_filter
 from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
@@ -138,58 +138,3 @@ def run_multiPatKuramoto(RSsig):
         print('Routine finished for patient no. ' + str(pat + 1) + '.')
 
     return Phases, sync, metastab
-
-
-def run_multiPatcofluct(RSsig):
-    r"""Run cofluctuation analysis for BOLD signal.
-
-    Parameters
-    ----------
-    RSsig : ndarray
-        BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
-
-    Returns
-    -------
-    cofl : ndarray
-        Cofluctuation matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
-
-    References
-    ----------
-
-    .. [1] 
-    Esfahlani, F. Z. et al. (2020) ‘High-amplitude cofluctuations in cortical activity drive 
-    functional connectivity’, Proceedings of the National Academy of Sciences of the United 
-    States of America, 117(45), pp. 28393–28401. doi: 10.1073/pnas.2005531117.
-
-    .. [2]
-    Faskowitz, J. et al. (2020) ‘Edge-centric functional network representations of human 
-    cerebral cortex reveal overlapping system-level architecture’, Nature Neuroscience. 
-    Springer US, 23(12), pp. 1644–1654. doi: 10.1038/s41593-020-00719-y.
-    
-
-    """
-
-    Tmax = RSsig.shape[0]
-    N = RSsig.shape[1]
-    nSub = RSsig.shape[2]
-
-    T = arange(10, Tmax - 10)
-
-    cofl = zeros([N, N, nSub])
-
-    for pat in range(nSub):
-
-        timeserie = zeros([N, Tmax])
-        signal = RSsig[:, :, pat].transpose()
-
-        for j in range(0, N):
-
-            for k in range(0, j + 1):
-
-                cofl[j, k, pat] = cofluct(signal[j, T], signal[k, T])
-                cofl[k, j, pat] = cofl[j, k, pat]
-
-        print('Matrices obtained.')
-        print('Routine finished for patient no. ' + str(pat + 1) + '.')
-
-    return cofl
