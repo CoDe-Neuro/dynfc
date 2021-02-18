@@ -3,7 +3,6 @@ from .butter_bandpass_filter import butter_bandpass_filter
 from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
 from .dPL import dPL
-from .cofluct import cofluct
 
 
 

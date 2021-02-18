@@ -1,6 +1,8 @@
 site_name: dynfc
 theme:
   name: "material"
+  palette:
+    primary: cyan
 
 plugins:
   - search
@@ -12,3 +14,13 @@ nav:
   - Code Reference:
     - cofluct: cofluct-reference.md
     - cc: cc-reference.md
+    - corr_slide: corr_slide-reference.md
+    - butter_design: butter_design-reference.md
+    - butter_bandpass_filter: butter_bandpass_filter-reference.md
+    - doEuclid: doEuclid-reference.md
+    - doHilbert: doHilbert-reference.md
+    - doKuramoto: doKuramoto-reference.md
+    - dPL: dPL-reference.md
+    - dynfc: dynfc-reference.md
+    - get_LEiDA: get_LEiDA-reference.md
+    - phDiff: phDiff-reference.md
