@@ -1,2 +1,2 @@
-# phDiff module
+# Phase lock
 ::: dynfc.phDiff
