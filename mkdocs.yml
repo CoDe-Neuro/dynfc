@@ -1,0 +1,14 @@
+site_name: dynfc
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings
+
+nav:
+  - Home: index.md
+#  - Installation: installation.md
+  - Code Reference:
+    - cofluct: cofluct-reference.md
+    - cc: cc-reference.md
