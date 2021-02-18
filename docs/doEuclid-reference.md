@@ -1,0 +1,2 @@
+# doEuclid module
+::: dynfc.doEuclid

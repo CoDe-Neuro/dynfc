@@ -1,0 +1,2 @@
+# doKuramoto module
+::: dynfc.doKuramoto

@@ -1,21 +1,25 @@
 from numpy import cos
 
 def phDiff(a, b):
-    r"""Cosine of phase difference.
+    """Cosine of phase difference.
 
     This function estimates the phase difference of the two entries and its cosine.
 
-    Parameters
-    ----------
-    a : double
-        Phase 1.
-    b : double
-        Phase 2.
+    $$PL = \cos{(a - b)}$$
 
-    Returns
-    -------
-    out : double
-        Cosine of phase difference.
+    Args:
+        a (double): Phase 1 in pi rad.
+        b (double): Phase 2 in pi rad.
+
+    Returns:
+        out (double): Cosine of phase difference.
+
+    Example:
+            >>> import numpy as np
+            >>> a = np.pi
+            >>> b = - np.pi
+            >>> print(phDiff(a,b))
+            1.0
 
     References
     ----------
@@ -26,14 +30,6 @@ def phDiff(a, b):
     modulated by psilocybin. NeuroImage, 199(April), 127–142. 
     https://doi.org/10.1016/j.neuroimage.2019.05.060
 
-    Examples
-    --------
-
-    >>> import numpy as np
-    >>> a = np.pi
-    >>> b = - np.pi
-    >>> print(phDiff(a,b))
-    1.0
     """
 
     c = cos(a - b)
