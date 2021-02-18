@@ -1,23 +1,16 @@
 from scipy.signal import butter
 
 def butter_design(flp, fhi, delt, order):
-    r"""Butterworth filter design.
+    """Butterworth filter design.
 
-    Parameters
-    ----------
-    flp : float
-        Low-pass frequency.
-    fhi : float
-        High-pass frequency.
-    delt: int
-        Sampling interval.
-    order: int
-        Filter order.
+    Args:
+        flp (float): Low-pass frequency.
+        fhi (float): High-pass frequency.
+        delt (int): Sampling interval.
+        order (int): Filter order.
 
-    Returns
-    -------
-    b,a : ndarray
-        Filter design.
+    Returns:
+        b,a (ndarray): Filter design.
     """
 
     fnq = 1 / (2 * delt)       # Nyquist frequency

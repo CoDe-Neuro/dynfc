@@ -3,24 +3,18 @@ from numpy import zeros, angle
 
 
 def doHilbert(N, Tmax, timeserie):
-    r"""Hilbert transform of BOLD signal form all parcels/voxels.
+    """Hilbert transform of BOLD signal form all parcels/voxels.
 
     This fuction returns the phase time series for all parcels/voxels
     of the input.
 
-    Parameters
-    ----------
-    N : int
-        Number of parcels/voxels of the input array.
-    Tmax : int
-        BOLD signal samples count.
-    timeseries: ndarray
-        Bold signal array for all parcels/voxels in the format [N, Tmax].
+    Args: 
+        N (int): Number of parcels/voxels of the input array.
+        Tmax (int): BOLD signal samples count.
+        timeseries (ndarray): Bold signal array for all parcels/voxels in the format [N, Tmax].
 
-    Returns
-    -------
-    PhasesAux : ndarray
-        Phases array for all parcels/voxels in the format [N, Tmax].
+    Returns:
+        PhasesAux (ndarray): Phases array for all parcels/voxels in the format [N, Tmax].
     """
 
     PhasesAux = zeros([N, Tmax])

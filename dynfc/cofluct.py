@@ -5,17 +5,13 @@ import numpy as np
 
 
 def cofluct(series, size, k=1):
-    r"""Run cofluctuation analysis for BOLD signal.
+    """Run cofluctuation analysis for BOLD signal.
 
-    Parameters
-    ----------
-    RSsig : ndarray
-        BOLD signal array for all parcels/voxels in the format [N, Tmax].
+    Args: 
+        RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax].
 
-    Returns
-    -------
-    cofl : ndarray
-        Cofluctuation matrix for all parcels/voxels in the format [N, N].
+    Returns:
+        cofl (ndarray): Cofluctuation matrix for all parcels/voxels in the format [N, N].
 
     References
     ----------
@@ -30,7 +26,6 @@ def cofluct(series, size, k=1):
     cerebral cortex reveal overlapping system-level architecture’, Nature Neuroscience. 
     Springer US, 23(12), pp. 1644–1654. doi: 10.1038/s41593-020-00719-y.
     
-
     """
     corr_mats, idx = dyn.corr_slide(series, size)
     edges_series = zeros((len(triu_indices(corr_mats.shape[0], k)[0]),

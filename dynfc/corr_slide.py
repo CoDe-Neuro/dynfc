@@ -1,12 +1,10 @@
 from numpy import zeros, corrcoef, arange
 
 def corr_slide(series, size, slide = None):
-    r"""Run cofluctuation analysis for BOLD signal.
+    """Run cofluctuation analysis for BOLD signal.
 
-    Parameters
-    ----------
-    series : ndarray
-        BOLD signal array for all parcels/voxels in the format [N, Tmax].
+    Args: 
+        series (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax].
 
     Returns
     -------

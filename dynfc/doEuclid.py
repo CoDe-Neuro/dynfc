@@ -4,17 +4,13 @@ from numpy import zeros
 
 
 def doEuclid(PCs):
-    r"""Obtain Euclidean distance to the previous points.
+    """Obtain Euclidean distance to the previous points.
 
-    Parameters
-    ----------
-    PCs : ndarray
-        PCs array in the format [Subs * Tmax, n PCs].
+    Args: 
+    PCs (ndarray): PCs array in the format [Subs * Tmax, n PCs].
 
-    Returns
-    -------
-    d : ndarray
-        Euclidean distances in the format [1, Subs * Tmax].
+    Returns: 
+    d (ndarray): Euclidean distances in the format [1, Subs * Tmax].
 
     """
 

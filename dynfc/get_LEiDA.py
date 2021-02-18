@@ -3,22 +3,25 @@ from numpy import zeros
 
 
 def get_LEiDA(syncConnAux):
-    r"""Obtain leading eigenvector for synchronicity matrices.
+    """Obtain leading eigenvector for synchronicity matrices.
 
-    Parameters
-    ----------
-    syncConnAux : ndarray
-        Synchronicty matrices for all parcels/voxels in the format [N, N, Tmax].
+    Args: 
+        syncConnAux (ndarray): Synchronicty matrices for all parcels/voxels in the format [N, N, Tmax].
 
-    Returns
-    -------
-    leidaArrayAux : ndarray
-        Leading eigenvector of synchornicity matrix [Tmax, N].
+    Returns: 
+        leidaArrayAux (ndarray): Leading eigenvector of synchornicity matrix [Tmax, N].
 
     References
     ----------
 
     .. [1] 
+    Cabral, J. et al. (2017). ‘Cognitive performance in healthy 
+    older adults relates to spontaneous switching between states 
+    of functional connectivity during rest’, Scientific Reports. 
+    Nature Publishing Group, 7(1), p. 5135. 
+    doi: 10.1038/s41598-017-05425-7.
+
+    .. [2] 
     Lord et al,. (2019). Dynamical exploration of the 
     repertoire of brain networks at rest is 
     modulated by psilocybin. NeuroImage, 199(April), 127–142. 

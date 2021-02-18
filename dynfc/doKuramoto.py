@@ -2,27 +2,20 @@ from numpy import zeros, sin, cos, std, arange
 
 
 
-def doKuramoto(N, Tmax, Phases):
-    r"""Dynamic Phase-Locking.
+def doKuramoto(N, Tmax, phases):
+    """Dynamic Phase-Locking.
 
     This fuction returns the dynamic Phase-Locking for all parcels/voxels
     of the input.
 
-    Parameters
-    ----------
-    N : int
-        Number of parcels/voxels of the input array.
-    Tmax : int
-        BOLD signal samples count.
-    Phases: ndarray
-        Phases signal array for all parcels/voxels in the format [N, Tmax].
+    Args: 
+        N (int): Number of parcels/voxels of the input array.
+        Tmax (int): BOLD signal samples count.
+        phases (ndarray): Phases signal array for all parcels/voxels in the format [N, Tmax].
 
-    Returns
-    -------
-    syncAux : ndarray
-        Synchronicity matrix for all parcels/voxels in the format [N, N].
-    metastabAux : double
-        Metastability index - Standard deviation of Kuramoto Parameter.
+    Returns:
+        syncAux (ndarray): Synchronicity matrix for all parcels/voxels in the format [N, N].
+        metastabAux (double): Metastability index - Standard deviation of Kuramoto Parameter.
 
     References
     ----------
@@ -38,7 +31,7 @@ def doKuramoto(N, Tmax, Phases):
 
     for t in range(0, len(T)):
 
-        ku = sum(cos(Phases[:, T[t]]) + 1j * sin(Phases[:, T[t]])) / N
+        ku = sum(cos(phases[:, T[t]]) + 1j * sin(phases[:, T[t]])) / N
         syncAux[t] = abs(ku)
 
     metastabAux = std(syncAux)

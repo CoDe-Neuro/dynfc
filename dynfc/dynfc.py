@@ -7,21 +7,15 @@ from .dPL import dPL
 
 
 def run_multiPat(RSsig):
-    r"""Run LEiDA Routine for BOLD signal.
+    """Run LEiDA Routine for BOLD signal.
 
-    Parameters
-    ----------
-    RSsig : ndarray
-        BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
+    Args:
+        RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
 
-    Returns
-    -------
-    Phases : ndarray
-        Phases array for all parcels/voxels in the format [N, Tmax, Subs].
-    syncConn : ndarray
-        Synchronicity matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
-    leidaArray : ndarray
-        Leading eigenvector of synchornicity matrix [Tmax, N, Subs].
+    Returns:
+        phases (ndarray): Phases array for all parcels/voxels in the format [N, Tmax, Subs].
+        syncConn (ndarray): Synchronicity matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
+        leidaArray (ndarray): Leading eigenvector of synchornicity matrix [Tmax, N, Subs].
 
     References
     ----------
@@ -48,7 +42,7 @@ def run_multiPat(RSsig):
 
     leidaArray = zeros([Tmax - 20, N, nSub])
     syncConn = zeros([N, N, Tmax - 20, nSub])
-    Phases = zeros([N, Tmax, nSub])
+    phases = zeros([N, Tmax, nSub])
 
     flp = .04              # lowpass frequency of filter
     fhi = .07              # highpass
@@ -65,35 +59,29 @@ def run_multiPat(RSsig):
             timeserie[seed, :] = butter_bandpass_filter(signal[seed, :],
                                                     flp, fhi, delt, k)
         print('Signal filtered.')
-        Phases[:, :, pat] = doHilbert(N, Tmax, timeserie)
+        phases[:, :, pat] = doHilbert(N, Tmax, timeserie)
 
         print('Phases obtained.')
-        syncConnAux, leidaArrayAux = dPL(N, Tmax, Phases[:, :, pat])
+        syncConnAux, leidaArrayAux = dPL(N, Tmax, phases[:, :, pat])
         syncConn[:, :, :, pat] = syncConnAux
         leidaArray[:, :, pat] = leidaArrayAux
 
         print('Matrices obtained.')
         print('Routine finished for patient no. ' + str(pat + 1) + '.')
     
-    return Phases, syncConn, leidaArray
+    return phases, syncConn, leidaArray
 
 
 def run_multiPatKuramoto(RSsig):
-    r"""Run LEiDA Routine for BOLD signal.
+    """Run LEiDA Routine for BOLD signal.
 
-    Parameters
-    ----------
-    RSsig : ndarray
-        BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
+    Args: 
+        RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
 
-    Returns
-    -------
-    Phases : ndarray
-        Phases array for all parcels/voxels in the format [N, Tmax, Subs].
-    sync : ndarray
-        Synchronicity matrix for all parcels/voxels in the format [Tmax, Subs].
-    metastab : ndarray
-        Leading eigenvector of synchornicity matrix [Subs].
+    Returns: 
+        phases (ndarray): Phases array for all parcels/voxels in the format [N, Tmax, Subs].
+        sync (ndarray): Synchronicity matrix for all parcels/voxels in the format [Tmax, Subs].
+        metastab (ndarray): Leading eigenvector of synchornicity matrix [Subs].
 
     References
     ----------
@@ -108,7 +96,7 @@ def run_multiPatKuramoto(RSsig):
     nSub = RSsig.shape[2]
 
     metastab = zeros([nSub])
-    Phases = zeros([N, Tmax, nSub])
+    phases = zeros([N, Tmax, nSub])
     sync = zeros([Tmax - 20, nSub])
 
     flp = .04              # lowpass frequency of filter
@@ -126,14 +114,14 @@ def run_multiPatKuramoto(RSsig):
             timeserie[seed, :] = butter_bandpass_filter(signal[seed, :],
                                                         flp, fhi, delt, k)
         print('Signal filtered.')
-        Phases[:, :, pat] = doHilbert(N, Tmax, timeserie)
+        phases[:, :, pat] = doHilbert(N, Tmax, timeserie)
 
         print('Phases obtained.')
-        metastabAux, syncAux = doKuramoto(N, Tmax, Phases[:, :, pat])
+        metastabAux, syncAux = doKuramoto(N, Tmax, phases[:, :, pat])
         sync[:, pat] = syncAux[:,0]
         metastab[pat] = metastabAux
 
         print('Matrices obtained.')
         print('Routine finished for patient no. ' + str(pat + 1) + '.')
 
-    return Phases, sync, metastab
+    return phases, sync, metastab
