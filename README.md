@@ -15,7 +15,7 @@ This project is funded by a Wellcome Trust Seed Award in Science [[217316/Z/19/Z
 
 MIT License
 
-Copyright (c) 2021 CoDe-Neuro
+Copyright (c) 2021 Lucas G. S. França and Dafnis Batallé
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
