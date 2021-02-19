@@ -1,3 +1,5 @@
+# The data used for testing was obtained from the repository https://github.com/brain-networks/edge-ts. [no license]
+
 import dynfc as dyn
 from numpy import pi, load, hstack
 
