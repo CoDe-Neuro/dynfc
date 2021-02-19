@@ -41,6 +41,7 @@ nav:
   - doEuclid: doEuclid-reference.md
   - dynfc: dynfc-reference.md
   - get_LEiDA: get_LEiDA-reference.md
+  - License: license.md
 
 copyright: Copyright &copy; 2021 Lucas G. S. França and Dafnis Batallé
 
