@@ -5,11 +5,11 @@ from numpy import zeros
 def get_LEiDA(syncConnAux):
     """Obtain leading eigenvector for synchronicity matrices.
 
-    Args: 
+    Args:
         syncConnAux (ndarray): Synchronicty matrices for all parcels/voxels in the format [N, N, Tmax].
 
-    Returns: 
-        leidaArrayAux (ndarray): Leading eigenvector of synchornicity matrix [Tmax, N].
+    Returns:
+        leidaArrayAux : Leading eigenvector of synchornicity matrix [Tmax, N].
 
     References
     ----------

@@ -1,2 +1,2 @@
-# corr_slide module
+# Sliding windows correlations
 ::: dynfc.corr_slide

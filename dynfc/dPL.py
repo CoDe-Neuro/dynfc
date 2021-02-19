@@ -9,14 +9,15 @@ def dPL(N, Tmax, phases):
     This fuction returns the dynamic Phase-Locking for all parcels/voxels
     of the input.
 
-    Args: 
+    Args:
         N (int): Number of parcels/voxels of the input array.
         Tmax (int): BOLD signal samples count.
         phases (ndarray): Phases signal array for all parcels/voxels in the format [N, Tmax].
 
     Returns:
-        syncConnAux (ndarray): Synchronicity matrix for all parcels/voxels in the format [N, N].
-        leidaArrayAux (ndarray): Leading eigenvector of synchornicity matrix [Tmax, N].
+        tuple: 
+            syncConnAux : Synchronicity matrix for all parcels/voxels in the format [N, N], 
+            leidaArrayAux : Leading eigenvector of synchornicity matrix [Tmax, N].
 
     References
     ----------

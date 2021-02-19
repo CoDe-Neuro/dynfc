@@ -12,7 +12,7 @@ def butter_bandpass_filter(x, flp, fhi, delt, order):
         order (int): Filter order.
 
     Returns:
-        y (array_like): Filtered signal.
+        double: Filtered signal.
     """
 
     b, a = butter_design(flp, fhi, delt, order)

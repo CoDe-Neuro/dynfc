@@ -3,13 +3,14 @@ from numpy import zeros, corrcoef, arange
 def corr_slide(series, size, slide = None):
     """Run cofluctuation analysis for BOLD signal.
 
-    Args: 
-        series (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax].
+    Args:
+        series (double): BOLD signal array for all parcels/voxels in the format [N, Tmax].
+        size (int): Size of sliding window.
+        slide (int, optional): Shift between windows. The standard value is the window size.
+            Non-overlapping.
 
-    Returns
-    -------
-    corr_mats : ndarray
-        Cofluctuation matrix for all parcels/voxels in the format [N, N, window].
+    Returns:
+        double: Cofluctuation matrix for all parcels/voxels in the format [N, N, window].
 
     References
     ----------

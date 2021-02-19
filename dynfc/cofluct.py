@@ -7,11 +7,12 @@ import numpy as np
 def cofluct(series, size, k=1):
     """Run cofluctuation analysis for BOLD signal.
 
-    Args: 
-        RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax].
+    Args:
+        series (double): BOLD signal array for all parcels/voxels in the format [N, Tmax].
+        size (int): size (int): Size of sliding window.
 
     Returns:
-        cofl (ndarray): Cofluctuation matrix for all parcels/voxels in the format [N, N].
+        double: Cofluctuation matrix for all parcels/voxels in the format [N, N].
 
     References
     ----------

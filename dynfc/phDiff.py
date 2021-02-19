@@ -8,11 +8,11 @@ def phDiff(a, b):
     $$PL = \cos{(a - b)}$$
 
     Args:
-        a (double): Phase 1 in pi rad.
-        b (double): Phase 2 in pi rad.
+        a (double): Phase 1 in $\pi$ rad.
+        b (double): Phase 2 in $\pi$ rad.
 
     Returns:
-        out (double): Cosine of phase difference.
+        double: Cosine of phase difference.
 
     Example:
             >>> import numpy as np

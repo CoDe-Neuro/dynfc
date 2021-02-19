@@ -1,2 +1,2 @@
-# doEuclid module
+# Euclidean distance
 ::: dynfc.doEuclid

@@ -1,2 +1,2 @@
-# butter_bandpass_filter module
+# Butterworth filter
 ::: dynfc.butter_bandpass_filter

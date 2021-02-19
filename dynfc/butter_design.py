@@ -10,7 +10,7 @@ def butter_design(flp, fhi, delt, order):
         order (int): Filter order.
 
     Returns:
-        b,a (ndarray): Filter design.
+        double: Filter design.
     """
 
     fnq = 1 / (2 * delt)       # Nyquist frequency

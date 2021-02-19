@@ -1,2 +1,2 @@
-# doKuramoto module
+# Kuramoto Order Parameter
 ::: dynfc.doKuramoto

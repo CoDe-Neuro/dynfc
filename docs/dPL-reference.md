@@ -1,2 +1,2 @@
-# dPL module
+# Synamic Phase-Locking
 ::: dynfc.dPL

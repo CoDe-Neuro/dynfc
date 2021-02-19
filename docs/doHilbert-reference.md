@@ -1,2 +1,2 @@
-# doHilbert module
+# Hilbert transform
 ::: dynfc.doHilbert

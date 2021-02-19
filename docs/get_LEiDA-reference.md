@@ -1,2 +1,2 @@
-# get_LEiDA module
+# LEiDA vector
 ::: dynfc.get_LEiDA

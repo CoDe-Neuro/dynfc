@@ -8,14 +8,15 @@ def doKuramoto(N, Tmax, phases):
     This fuction returns the dynamic Phase-Locking for all parcels/voxels
     of the input.
 
-    Args: 
+    Args:
         N (int): Number of parcels/voxels of the input array.
         Tmax (int): BOLD signal samples count.
         phases (ndarray): Phases signal array for all parcels/voxels in the format [N, Tmax].
 
-    Returns:
-        syncAux (ndarray): Synchronicity matrix for all parcels/voxels in the format [N, N].
-        metastabAux (double): Metastability index - Standard deviation of Kuramoto Parameter.
+    Return:
+        tuple:
+            syncAux : Synchronicity matrix for all parcels/voxels in the format [N, N], 
+            metastabAux : Metastability index - Standard deviation of Kuramoto Parameter
 
     References
     ----------

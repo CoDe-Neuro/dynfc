@@ -1,2 +1,2 @@
-# butter_design module
+# Butterworth filter design
 ::: dynfc.butter_design

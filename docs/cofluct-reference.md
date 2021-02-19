@@ -1,2 +1,2 @@
-# Cofluct module
+# Cofluctuations
 ::: dynfc.cofluct

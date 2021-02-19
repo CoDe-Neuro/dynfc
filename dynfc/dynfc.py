@@ -13,9 +13,10 @@ def run_multiPat(RSsig):
         RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
 
     Returns:
-        phases (ndarray): Phases array for all parcels/voxels in the format [N, Tmax, Subs].
-        syncConn (ndarray): Synchronicity matrix for all parcels/voxels in the format [N, N, Tmax, Subs].
-        leidaArray (ndarray): Leading eigenvector of synchornicity matrix [Tmax, N, Subs].
+        tuple:
+            phase: Phases array for all parcels/voxels in the format,
+            syncConn: Synchronicity matrix for all parcels/voxels in the format,
+            leidaArray: Leading eigenvector of synchornicity matrix
 
     References
     ----------
@@ -75,14 +76,16 @@ def run_multiPat(RSsig):
 def run_multiPatKuramoto(RSsig):
     """Run LEiDA Routine for BOLD signal.
 
-    Args: 
+    Args:
         RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
 
-    Returns: 
-        phases (ndarray): Phases array for all parcels/voxels in the format [N, Tmax, Subs].
-        sync (ndarray): Synchronicity matrix for all parcels/voxels in the format [Tmax, Subs].
-        metastab (ndarray): Leading eigenvector of synchornicity matrix [Subs].
-
+    Returns:
+        tuple:
+            phases : Phases array for all parcels/voxels in the format [N, Tmax, Subs].
+            sync : Synchronicity matrix for all parcels/voxels in the format [Tmax, Subs].
+            metastab : Leading eigenvector of synchornicity matrix [Subs].
+    
+    
     References
     ----------
 
