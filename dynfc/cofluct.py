@@ -9,7 +9,7 @@ def cofluct(series, size, k=1):
 
     Args:
         series (double): BOLD signal array for all parcels/voxels in the format [N, Tmax].
-        size (int): size (int): Size of sliding window.
+        size (int): Size of window.
 
     Returns:
         double: Cofluctuation matrix for all parcels/voxels in the format [N, N].
