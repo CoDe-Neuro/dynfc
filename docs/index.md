@@ -3,6 +3,7 @@
 [![codecov](https://codecov.io/gh/CoDe-Neuro/dynfc/branch/main/graph/badge.svg?token=EB7Z9AWZVN)](https://codecov.io/gh/CoDe-Neuro/dynfc) 
 ![GitHub](https://img.shields.io/github/license/CoDe-Neuro/dynfc)
 [![Website](https://img.shields.io/badge/repo-Readme-2196F3)](https://github.com/CoDe-Neuro/dynfc)
+[![DOI](https://zenodo.org/badge/334302177.svg)](https://zenodo.org/badge/latestdoi/334302177)
 
 This is the documentation page for 'dynfc', a Python module consisting of a set of tools developed to infer connectivity from fMRI (BOLD) signals. The module contains both phase-lock and correlation (+ cofluctuation) methods. Please be aware that this is still a develepment version and so may contain bugs and limited functionalities.
 
