@@ -1,8 +1,13 @@
 site_name: dynfc
 theme:
   name: "material"
+  icon:
+    repo: fontawesome/brands/github
   palette:
     primary: cyan
+
+repo_url: https://github.com/CoDe-Neuro/dynfc
+repo_name: CoDe-Neuro/dynfc
 
 plugins:
   - search
@@ -36,4 +41,11 @@ nav:
   - doEuclid: doEuclid-reference.md
   - dynfc: dynfc-reference.md
   - get_LEiDA: get_LEiDA-reference.md
-  
+
+copyright: Copyright &copy; 2021 Lucas G. S. França and Dafnis Batallé
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/CoDe-Neuro
+      name: CoDe-Neuro on GitHub
