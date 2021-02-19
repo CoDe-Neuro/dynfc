@@ -2,7 +2,7 @@
 [![Python package](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml)
 [![codecov](https://codecov.io/gh/CoDe-Neuro/dynfc/branch/main/graph/badge.svg?token=EB7Z9AWZVN)](https://codecov.io/gh/CoDe-Neuro/dynfc) 
 ![GitHub](https://img.shields.io/github/license/CoDe-Neuro/dynfc)
-[![Website](https://img.shields.io/badge/repo-Readme-2196F3)](https://github.com/CoDe-Neuro/dfc_chapter)
+[![Website](https://img.shields.io/badge/repo-Readme-2196F3)](https://github.com/CoDe-Neuro/dynfc)
 
 ## Project layout
 
