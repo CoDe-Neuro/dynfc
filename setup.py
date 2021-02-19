@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dynfc", 
-    version="0.0.1",
+    version="1.0.0-prealpha",
     author="Lucas G. S. França, Dafnis Batalle",
     author_email="lucas.franca@kcl.ac.uk, dafnis.batalle@kcl.ac.uk",
     description="",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/CoDe-Neuro/dynfc",
+    url="https://code-neuro.github.io/dynfc/",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
