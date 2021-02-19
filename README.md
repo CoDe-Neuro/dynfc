@@ -5,6 +5,26 @@
 [![Website](https://img.shields.io/badge/visit-website-E91E63)](https://code-neuro.github.io/dynfc/)
 
 
+
+This repository contains a Python module consisting of a set of tools developed to infer connectivity from fMRI (BOLD) signals. The module contains both phase-lock and correlation (+ cofluctuation) methods. Please be aware that this is still a develepment version and so may contain bugs and limited functionalities.
+
+If you have any questions or suggestions, please [open an issue in the relevant tab](https://github.com/CoDe-Neuro/dynfc/issues). 
+
+Please do not hesitate to suggest improvements to this module.
+
+
+## Built on
+
+[Numpy](https://numpy.org)            |  [Scipy](https://www.scipy.org)
+:-------------------------:|:-------------------------:
+<img src="https://www.scipy.org/_static/images/numpylogoicon.png" width="100">  |  <img src=https://docs.scipy.org/doc/scipy-0.11.0/reference/_static/scipyshiny_small.png width="100">
+
+
+The data used for testing was obtained from the repository [brain-networks/edge-ts](https://github.com/brain-networks/edge-ts). [no license]
+
+Please find references for the methods available here in the relevant [docs](https://code-neuro.github.io/dynfc/) for each function.
+
+
 ## Funding
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Wellcome_Trust_logo.svg" width="300">

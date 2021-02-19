@@ -4,17 +4,29 @@
 ![GitHub](https://img.shields.io/github/license/CoDe-Neuro/dynfc)
 [![Website](https://img.shields.io/badge/repo-Readme-2196F3)](https://github.com/CoDe-Neuro/dynfc)
 
+This is the documentation page for 'dynfc'. This is a Python module consisting of a set of tools developed to infer connectivity from fMRI (BOLD) signals. The module contains both phase-lock and correlation (+ cofluctuation) methods. Please be aware that this is still a develepment version and so may contain bugs and limited functionalities.
+
+If you have any questions or suggestions, please [open an issue](https://github.com/CoDe-Neuro/dynfc/issues). 
+
+Please do not hesitate to suggest improvements to this module.
+
+
+## Built on
+
+[Numpy](https://numpy.org)            |  [Scipy](https://www.scipy.org)
+:-------------------------:|:-------------------------:
+<img src="https://www.scipy.org/_static/images/numpylogoicon.png" width="100">  |  <img src=https://docs.scipy.org/doc/scipy-0.11.0/reference/_static/scipyshiny_small.png width="100">
+
 ## Project layout
 
     setup.py    
     dynfc/
         __init__.py
-        dynfc.py  # Main dynfc script
-        ...       # Other script files  
+        ...       # Python script files  
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
-    tests/
+    tests/        # Tests folder
         __init__.py
         test_functions.py
 
