@@ -6,7 +6,7 @@ from .dPL import dPL
 
 
 
-def run_multiPat(RSsig):
+def run_multiPatLEiDA(RSsig):
     """Run LEiDA Routine for BOLD signal.
 
     Args:
@@ -71,60 +71,3 @@ def run_multiPat(RSsig):
         print('Routine finished for patient no. ' + str(pat + 1) + '.')
     
     return phases, syncConn, leidaArray
-
-
-def run_multiPatKuramoto(RSsig):
-    """Run LEiDA Routine for BOLD signal.
-
-    Args:
-        RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
-
-    Returns:
-        tuple:
-            phases : Phases array for all parcels/voxels in the format [N, Tmax, Subs].
-            sync : Synchronicity matrix for all parcels/voxels in the format [Tmax, Subs].
-            metastab : Leading eigenvector of synchornicity matrix [Subs].
-    
-    
-    References
-    ----------
-
-    .. [1] 
-    
-
-    """
-
-    Tmax = RSsig.shape[0]
-    N = RSsig.shape[1]
-    nSub = RSsig.shape[2]
-
-    metastab = zeros([nSub])
-    phases = zeros([N, Tmax, nSub])
-    sync = zeros([Tmax - 20, nSub])
-
-    flp = .04              # lowpass frequency of filter
-    fhi = .07              # highpass
-    npts = Tmax            # total nb of points
-    delt = 2               # sampling interval
-    k = 2                  # 2nd order butterworth filter
-
-    for pat in range(nSub):
-
-        timeserie = zeros([N, Tmax])
-        signal = RSsig[:, :, pat].transpose()
-
-        for seed in range(N):
-            timeserie[seed, :] = butter_bandpass_filter(signal[seed, :],
-                                                        flp, fhi, delt, k)
-        print('Signal filtered.')
-        phases[:, :, pat] = doHilbert(N, Tmax, timeserie)
-
-        print('Phases obtained.')
-        metastabAux, syncAux = doKuramoto(N, Tmax, phases[:, :, pat])
-        sync[:, pat] = syncAux[:,0]
-        metastab[pat] = metastabAux
-
-        print('Matrices obtained.')
-        print('Routine finished for patient no. ' + str(pat + 1) + '.')
-
-    return phases, sync, metastab

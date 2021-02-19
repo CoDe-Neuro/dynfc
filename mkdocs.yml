@@ -39,7 +39,8 @@ nav:
     - phDiff: phDiff-reference.md
 
   - doEuclid: doEuclid-reference.md
-  - dynfc: dynfc-reference.md
+  - run_multiPatKOP: run_multiPatKOP-reference.md
+  - run_multiPatLEiDA: run_multiPatLEiDA-reference.md
   - get_LEiDA: get_LEiDA-reference.md
   - License: license.md
 
