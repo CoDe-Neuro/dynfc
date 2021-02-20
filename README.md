@@ -4,6 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/CoDe-Neuro/dynfc)
 [![Website](https://img.shields.io/badge/visit-website-E91E63)](https://code-neuro.github.io/dynfc/)
 [![DOI](https://zenodo.org/badge/334302177.svg)](https://zenodo.org/badge/latestdoi/334302177)
+![PyPI](https://img.shields.io/pypi/v/dynfc?color=purple)
 
 
 
