@@ -1,4 +1,5 @@
 # CoDe-Neuro's Dynamic Functional Connectivity Tools
+
 [![Python package](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml)
 [![docs](https://github.com/CoDe-Neuro/dynfc/actions/workflows/docs.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/docs.yml)
 [![codecov](https://codecov.io/gh/CoDe-Neuro/dynfc/branch/main/graph/badge.svg?token=EB7Z9AWZVN)](https://codecov.io/gh/CoDe-Neuro/dynfc)
@@ -8,34 +9,28 @@
 ![PyPI](https://img.shields.io/pypi/v/dynfc?color=purple)
 ![PyVers](https://img.shields.io/badge/Python-v3.6_|_v3.7_|_v3.8_|_v3.9-blue)
 
-
-
 This repository contains a Python module consisting of a set of tools developed to infer connectivity from fMRI (BOLD) signals. The module contains both phase-lock and correlation (+ cofluctuation) methods. Please be aware that this is still a develepment version and so may contain bugs and limited functionalities.
 
 If you have any questions or suggestions, please [open an issue in the relevant tab](https://github.com/CoDe-Neuro/dynfc/issues). 
 
 Please do not hesitate to suggest improvements to this module.
 
-## Installation 
+## Installation
 
 The easiest way to install dynfc is via pip (PyPI) with the command below.
 
-```
-pip install dynfc
+```pip install dynfc
 ```
 
 If you would like to specify a version use the following command to install version *0.0.1a1*, for example.
 
-```
-pip install dynfc==0.0.1a1
+```pip install dynfc==0.0.1a1
 ```
 
 Alternatively one can clone this repository and add it to a project. For that use the following command.
 
+```https://github.com/CoDe-Neuro/
 ```
-https://github.com/CoDe-Neuro/
-```
-
 
 ## Built on
 
@@ -43,11 +38,9 @@ https://github.com/CoDe-Neuro/
 :-------------------------:|:-------------------------:
 <img src="https://www.scipy.org/_static/images/numpylogoicon.png" width="100">  |  <img src=https://docs.scipy.org/doc/scipy-0.11.0/reference/_static/scipyshiny_small.png width="100">
 
-
 The data used for testing was obtained from the repository [brain-networks/edge-ts](https://github.com/brain-networks/edge-ts). [no license]
 
 Please find references for the methods available here in the relevant [docs](https://code-neuro.github.io/dynfc/) for each function.
-
 
 ## Funding
 
