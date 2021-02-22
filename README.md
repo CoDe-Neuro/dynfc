@@ -1,10 +1,12 @@
 # CoDe-Neuro's Dynamic Functional Connectivity Tools
 [![Python package](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml)
+[![docs](https://github.com/CoDe-Neuro/dynfc/actions/workflows/docs.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/docs.yml)
 [![codecov](https://codecov.io/gh/CoDe-Neuro/dynfc/branch/main/graph/badge.svg?token=EB7Z9AWZVN)](https://codecov.io/gh/CoDe-Neuro/dynfc)
 ![GitHub](https://img.shields.io/github/license/CoDe-Neuro/dynfc)
 [![Website](https://img.shields.io/badge/visit-website-E91E63)](https://code-neuro.github.io/dynfc/)
 [![DOI](https://zenodo.org/badge/334302177.svg)](https://zenodo.org/badge/latestdoi/334302177)
 ![PyPI](https://img.shields.io/pypi/v/dynfc?color=purple)
+![PyVers](https://img.shields.io/badge/Python-v3.6_|_v3.7_|_v3.8_|_v3.9-blue)
 
 
 
@@ -13,6 +15,26 @@ This repository contains a Python module consisting of a set of tools developed 
 If you have any questions or suggestions, please [open an issue in the relevant tab](https://github.com/CoDe-Neuro/dynfc/issues). 
 
 Please do not hesitate to suggest improvements to this module.
+
+## Installation 
+
+The easiest way to install dynfc is via pip (PyPI) with the command below.
+
+```
+pip install dynfc
+```
+
+If you would like to specify a version use the following command to install version *0.0.1a1*, for example.
+
+```
+pip install dynfc==0.0.1a1
+```
+
+Alternatively one can clone this repository and add it to a project. For that use the following command.
+
+```
+https://github.com/CoDe-Neuro/
+```
 
 
 ## Built on
