@@ -1,4 +1,8 @@
-# CoDe-Neuro's Dynamic Functional Connectivity Tools
+<img align="right" width="200" height="200" src="dynFC_logo.png">
+
+<br/>
+
+# dynFC: CoDe-Neuro's Dynamic Functional Connectivity Tools
 
 [![Python package](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/python-package.yml)
 [![docs](https://github.com/CoDe-Neuro/dynfc/actions/workflows/docs.yml/badge.svg)](https://github.com/CoDe-Neuro/dynfc/actions/workflows/docs.yml)
