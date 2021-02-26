@@ -1,8 +1,10 @@
-site_name: dynfc
+site_name: dynFC
 theme:
   name: "material"
   icon:
     repo: fontawesome/brands/github
+  logo: https://github.com/CoDe-Neuro/dynfc/blob/main/dynFC_logo.png?raw=true
+  favicon: https://github.com/CoDe-Neuro/dynfc/blob/main/dynFC_logo.png?raw=true
   palette:
     primary: cyan
 
