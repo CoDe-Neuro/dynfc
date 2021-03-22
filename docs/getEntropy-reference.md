@@ -1,0 +1,2 @@
+# Shannon Entropy
+::: dynfc.getEntropy

@@ -4,7 +4,7 @@ from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
 
 
-def run_multiPatKOP(RSsig):
+def run_multiPatKOP(RSsig, base = 2, nBits = 8, flp=.04, fhi=.07, delt=2, k=2):
     """Run KOP Routine for BOLD signal.
 
     Args:
@@ -30,14 +30,15 @@ def run_multiPatKOP(RSsig):
     nSub = RSsig.shape[2]
 
     metastab = zeros([nSub])
+    shEntropy = zeros([nSub])
     phases = zeros([N, Tmax, nSub])
     sync = zeros([Tmax - 20, nSub])
 
-    flp = .04              # lowpass frequency of filter
-    fhi = .07              # highpass
+    #flp = .04              # lowpass frequency of filter
+    #fhi = .07              # highpass
     npts = Tmax            # total nb of points
-    delt = 2               # sampling interval
-    k = 2                  # 2nd order butterworth filter
+    #delt = 2               # sampling interval
+    #k = 2                  # 2nd order butterworth filter
 
     for pat in range(nSub):
 
@@ -51,9 +52,11 @@ def run_multiPatKOP(RSsig):
         phases[:, :, pat] = doHilbert(N, Tmax, timeserie)
 
         print('Phases obtained.')
-        metastabAux, syncAux = doKuramoto(N, Tmax, phases[:, :, pat])
+        metastabAux, syncAux, shEntropyAux = doKuramoto(
+            N, Tmax, phases[:, :, pat], base, nBits)
         sync[:, pat] = syncAux[:,0]
         metastab[pat] = metastabAux
+        shEntropy[pat] = shEntropy
 
         print('Matrices obtained.')
         print('Routine finished for patient no. ' + str(pat + 1) + '.')

@@ -11,6 +11,7 @@ from .phDiff import phDiff
 from .cofluct import cofluct
 from .cc import cc
 from .corr_slide import corr_slide
+from .getEntropy import getEntropy
 
 __all__ = [
     'run_multiPatKOP',

@@ -1,8 +1,9 @@
+from dynfc import getEntropy
 from numpy import zeros, sin, cos, std, arange
 
 
 
-def doKuramoto(N, Tmax, phases):
+def doKuramoto(N, Tmax, phases, base = 2, nBits = 8):
     """Dynamic Phase-Locking.
 
     This fuction returns the dynamic Phase-Locking for all parcels/voxels
@@ -12,6 +13,8 @@ def doKuramoto(N, Tmax, phases):
         N (int): Number of parcels/voxels of the input array.
         Tmax (int): BOLD signal samples count.
         phases (ndarray): Phases signal array for all parcels/voxels in the format [N, Tmax].
+        base (double, optional): Base for obtaining Shannon entropy.
+        nBits (int, optional): n
 
     Return:
         tuple:
@@ -36,5 +39,6 @@ def doKuramoto(N, Tmax, phases):
         syncAux[t] = abs(ku)
 
     metastabAux = std(syncAux)
+    shEntropy = getEntropy(syncAux, base, nBits)
 
-    return metastabAux, syncAux
+    return metastabAux, syncAux, shEntropy
