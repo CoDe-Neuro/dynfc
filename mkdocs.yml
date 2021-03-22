@@ -44,6 +44,7 @@ nav:
   - run_multiPatKOP: run_multiPatKOP-reference.md
   - run_multiPatLEiDA: run_multiPatLEiDA-reference.md
   - get_LEiDA: get_LEiDA-reference.md
+  - getEntropy: getEntropy-reference.md
   - License: license.md
 
 copyright: Copyright &copy; 2021 Lucas G. S. França and Dafnis Batallé

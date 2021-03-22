@@ -60,3 +60,15 @@ def test_cofluct3():
     edges_series, corr_mats, rss = dyn.cofluct(ts, size)
 
     assert rss.shape[0] == ts.shape[1]
+
+def test_entropy1():
+    
+    series = [1, 3, 5, 2, 3, 5, 3, 2, 1, 3, 4, 5]
+
+    assert dyn.getEntropy(series, base=None) == 1.5171063970610277
+
+def test_entropy2():
+
+    series = [1, 3, 5, 2, 3, 5, 3, 2, 1, 3, 4, 5]
+
+    assert dyn.getEntropy(series, base=2) == 2.1887218755408675
