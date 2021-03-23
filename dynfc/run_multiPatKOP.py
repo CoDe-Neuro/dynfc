@@ -56,9 +56,9 @@ def run_multiPatKOP(RSsig, base = 2, nBits = 8, flp=.04, fhi=.07, delt=2, k=2):
             N, Tmax, phases[:, :, pat], base, nBits)
         sync[:, pat] = syncAux[:,0]
         metastab[pat] = metastabAux
-        shEntropy[pat] = shEntropy
+        shEntropy[pat] = shEntropyAux
 
         print('Matrices obtained.')
         print('Routine finished for patient no. ' + str(pat + 1) + '.')
 
-    return phases, sync, metastab
+    return metastab, sync, shEntropy
