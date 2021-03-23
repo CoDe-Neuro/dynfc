@@ -1,4 +1,4 @@
-from dynfc import getEntropy
+from .getEntropy import getEntropy
 from numpy import zeros, sin, cos, std, arange
 
 
@@ -39,6 +39,6 @@ def doKuramoto(N, Tmax, phases, base = 2, nBits = 8):
         syncAux[t] = abs(ku)
 
     metastabAux = std(syncAux)
-    shEntropy = getEntropy(syncAux, base, nBits)
+    shEntropy = getEntropy(syncAux[:,0], base, nBits)
 
     return metastabAux, syncAux, shEntropy
