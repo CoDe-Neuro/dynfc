@@ -12,7 +12,7 @@ def cofluct(series, size, k=1):
         size (int): Size of window.
 
     Returns:
-        double: Cofluctuation matrix for all parcels/voxels in the format [N, N].
+        double: Cofluctuation matrix for all parcels/voxels in the format [N, N, Tmax].
 
     References
     ----------
