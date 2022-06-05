@@ -4,7 +4,7 @@ from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
 
 
-def run_multiPatKOP(RSsig, base=2, nBits=8, delt, flp=.04, fhi=.07, k=2):
+def run_multiPatKOP(RSsig, base=2, nBits=8, delt = 0.392, flp=.04, fhi=.07, k=2):
     """Run KOP Routine for BOLD signal.
 
     Args:
