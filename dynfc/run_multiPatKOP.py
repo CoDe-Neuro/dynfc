@@ -4,11 +4,15 @@ from .doKuramoto import doKuramoto
 from .doHilbert import doHilbert
 
 
-def run_multiPatKOP(RSsig, base = 2, nBits = 8, flp=.04, fhi=.07, delt=2, k=2):
+def run_multiPatKOP(RSsig, base=2, nBits=8, delt, flp=.04, fhi=.07, k=2):
     """Run KOP Routine for BOLD signal.
 
     Args:
         RSsig (ndarray): BOLD signal array for all parcels/voxels in the format [N, Tmax, Subs].
+        delt: TR sample.
+        flp: low threshold frequency of filter
+        fhi: high threshold frequency of filter
+        k: filter order
 
     Returns:
         tuple:
