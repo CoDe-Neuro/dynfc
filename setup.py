@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dynfc", 
-    version="0.0.2-a1",
+    version="0.0.3-a1",
     author="Lucas G. S. França, Dafnis Batalle",
     author_email="lucas.franca@kcl.ac.uk, dafnis.batalle@kcl.ac.uk",
     description="",
