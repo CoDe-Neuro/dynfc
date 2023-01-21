@@ -17,6 +17,12 @@ If you have any questions or suggestions, please [open an issue in the relevant 
 
 Please do not hesitate to suggest improvements to this module.
 
+## Citation
+
+:warning: Please, use the following article for reference:
+
+Lucas G. S. França, Judit Ciarrusta, Oliver Gale-Grant, Sunniva Fenn-Moltu, Sean Fitzgibbon, Andrew Chew, Shona Falconer, Ralica Dimitrova, Lucilio Cordero-Grande, Anthony N Price, Emer Hughes, Jonathan O’Muircheartaigh, Eugene Duff, Jetro J Tuulari, Gustavo Deco, Serena J Counsell, Joseph V Hajnal, Chiara Nosarti, Tomoki Arichi, A David Edwards, Grainne McAlonan, Dafnis Batalle. bioRxiv 2022.11.16.516610; doi: https://doi.org/10.1101/2022.11.16.516610
+
 ## Installation
 
 The easiest way to install dynfc is via pip (PyPI) with the command below.
@@ -41,7 +47,7 @@ git clone https://github.com/CoDe-Neuro/
 
 [Numpy](https://numpy.org)            |  [Scipy](https://www.scipy.org)
 :-------------------------:|:-------------------------:
-<img src="https://www.scipy.org/_static/images/numpylogoicon.png" width="100">  |  <img src=https://docs.scipy.org/doc/scipy-0.11.0/reference/_static/scipyshiny_small.png width="100">
+<img src="https://numpy.org/images/logo.svg" width="100">  |  <img src=https://docs.scipy.org/doc/scipy-0.11.0/reference/_static/scipyshiny_small.png width="100">
 
 The data used for testing was obtained from the repository [brain-networks/edge-ts](https://github.com/brain-networks/edge-ts). [no license]
 

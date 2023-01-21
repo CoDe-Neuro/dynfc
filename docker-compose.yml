@@ -1,0 +1,16 @@
+version: "3"
+services:
+
+  jupyter:
+    image: mri-datascience:latest
+    build:
+      context: ./jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+          - "./dynfc:/src"
+          - "./test:/test" 
+          - "./data:/data"
+          - "./jupyter:/jupyter"
+    environment:
+          - JUPYTER_ENABLE_LAB=yes
