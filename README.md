@@ -21,7 +21,7 @@ Please do not hesitate to suggest improvements to this module.
 
 :warning: Please, use the following article for reference:
 
-Lucas G. S. França, Judit Ciarrusta, Oliver Gale-Grant, Sunniva Fenn-Moltu, Sean Fitzgibbon, Andrew Chew, Shona Falconer, Ralica Dimitrova, Lucilio Cordero-Grande, Anthony N Price, Emer Hughes, Jonathan O’Muircheartaigh, Eugene Duff, Jetro J Tuulari, Gustavo Deco, Serena J Counsell, Joseph V Hajnal, Chiara Nosarti, Tomoki Arichi, A David Edwards, Grainne McAlonan, Dafnis Batalle. bioRxiv 2022.11.16.516610; doi: https://doi.org/10.1101/2022.11.16.516610
+Lucas G. S. França, Judit Ciarrusta, Oliver Gale-Grant, Sunniva Fenn-Moltu, Sean Fitzgibbon, Andrew Chew, Shona Falconer, Ralica Dimitrova, Lucilio Cordero-Grande, Anthony N. Price, Emer Hughes, Jonathan O’Muircheartaigh, Eugene Duff, Jetro J. Tuulari, Gustavo Deco, Serena J. Counsell, Joseph V. Hajnal, Chiara Nosarti, Tomoki Arichi, A. David Edwards, Grainne McAlonan & Dafnis Batalle. Neonatal brain dynamic functional connectivity in term and preterm infants and its association with early childhood neurodevelopment. *Nature Communications* **15**, 16 (2024). https://doi.org/10.1038/s41467-023-44050-z
 
 ## Installation
 
