@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dynfc", 
-    version="0.0.3-a1",
+    version="0.0.3a2",
     author="Lucas G. S. França, Dafnis Batalle",
     author_email="lucas.franca@kcl.ac.uk, dafnis.batalle@kcl.ac.uk",
     description="",
@@ -18,9 +18,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     install_requires=[
-        "numpy<2.0",
+        "numpy",
         "scipy",
         "pandas",
         "scikit-learn",
