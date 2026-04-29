@@ -1,7 +1,7 @@
 # Based on solution at https://gist.github.com/jaradc/eeddf20932c0347928d0da5a09298147
 
+import numpy as np
 from numpy import unique, multiply
-from numpy.core.fromnumeric import round_ 
 from scipy.stats import entropy
 
 def getEntropy(series, base = 2, nBits = None):
@@ -22,8 +22,8 @@ def getEntropy(series, base = 2, nBits = None):
 
     """
 
-    if nBits != None:
-        series = round_(multiply(series, 2 ** nBits))
+    if nBits is not None:
+        series = np.round(multiply(series, 2 ** nBits))
 
     mags, probs = unique(series, 
                          return_counts=True)

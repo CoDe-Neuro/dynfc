@@ -24,9 +24,6 @@ __all__ = [
     'phDiff', 
     'butter_design', 
     'doEuclid', 
-    'cofluct', 
-    'phDiff', 
-    'z_corr', 
-    'get_edgests', 
     'corr_slide', 
-    'cc']
+    'cc',
+    'getEntropy']
